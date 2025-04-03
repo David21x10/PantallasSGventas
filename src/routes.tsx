@@ -5,6 +5,8 @@ import Categorias from "./components/Categorias/Categorias";
 import Cliente from "./components/Cliente/Cliente";
 import Productos from "./components/Productos/Productos";
 import Venta from "./components/Venta/Venta";
+import App from "./components/App/App";
+
 
 const AppRoutes: React.FC = () => {
   const location = useLocation();

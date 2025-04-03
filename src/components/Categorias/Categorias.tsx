@@ -133,3 +133,6 @@ const Categorias: React.FC = () => {
 };
 
 export default Categorias;
+
+
+

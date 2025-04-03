@@ -204,3 +204,7 @@
   .login-form button:hover {
     background-color: #a0cbd4; /* Tono más oscuro para hover */
   }
+
+  :root {
+    --background-light: #ffffff; /* Fondo completamente blanco */
+  }
