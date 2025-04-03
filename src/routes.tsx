@@ -1,10 +1,10 @@
 import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Menu from "./components/Menu/Menu";
-import Categorias from "./Categorias";
-import Cliente from "./Cliente";
-import Productos from "./Productos";
-import Venta from "./Venta";
+import Categorias from "./components/Categorias/Categorias";
+import Cliente from "./components/Cliente/Cliente";
+import Productos from "./components/Productos/Productos";
+import Venta from "./components/Venta/Venta";
 
 const AppRoutes: React.FC = () => {
   const location = useLocation();
