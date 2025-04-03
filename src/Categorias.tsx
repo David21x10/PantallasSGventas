@@ -21,7 +21,7 @@ const Categorias: React.FC = () => {
       const idNumber = Number(idCategoria);
 
       if (isNaN(idNumber) || idNumber <= 0) {
-        setError("El ID de la categoría debe ser un número mayor que 0.");
+        setError("El Id de la categoría debe ser un número mayor que 0.");
         return;
       }
 
