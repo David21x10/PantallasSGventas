@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <Menu />
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/categoria" element={<Categorias />} />
+        <Route path="/categorias" element={<Categorias />} />
         <Route path="/cliente" element={<Cliente />} />
         <Route path="/productos" element={<Productos />} />
         <Route path="/venta" element={<Venta />} />

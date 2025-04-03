@@ -1,8 +1,6 @@
-import React from "react";
-import "./Categorias.css";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button } from "react-bootstrap";
-
+import "./Categorias.css";
 
 interface Categoria {
   idCategoria: number;
@@ -18,15 +16,6 @@ const Categorias: React.FC = () => {
   const [error, setError] = useState<string>("");
   const navigate = useNavigate();
 
-  return (
-    <div>
-      <h2>Página de Categorías</h2>
-      <button className="btn-back" onClick={() => navigate("/")}>
-        Regresar al Menú
-      </button>
-    </div>
-  );
-
   const handleAgregar = () => {
     if (idCategoria !== "" && categoria !== "") {
       const idNumber = Number(idCategoria);
@@ -37,7 +26,6 @@ const Categorias: React.FC = () => {
       }
 
       if (editando && categoriaEditada) {
-
         setCategorias(
           categorias.map((cat) =>
             cat.idCategoria === categoriaEditada.idCategoria
@@ -48,7 +36,6 @@ const Categorias: React.FC = () => {
         setEditando(false);
         setCategoriaEditada(null);
       } else {
-
         setCategorias([...categorias, { idCategoria: idNumber, categoria }]);
       }
       setIdCategoria("");
@@ -71,73 +58,78 @@ const Categorias: React.FC = () => {
   };
 
   return (
-    <div className="categoria-container">
-      <h2 className="titulo">Categorías</h2>
-      <div className="formulario">
-        <div className="input-group">
-          <label>ID Categoría:</label>
-          <input
-            type="number"
-            value={idCategoria}
-            onChange={(e) => setIdCategoria(e.target.value)}
-            placeholder="Ingrese el ID"
-            min="1" 
-          />
+    <div>
+      <button className="btn-back" onClick={() => navigate("/")}>
+        Regresar al Menú
+      </button>
+      
+      <div className="categoria-container">
+        <h2 className="titulo">Categorías</h2>
+        <div className="formulario">
+          <div className="input-group">
+            <label>ID Categoría:</label>
+            <input
+              type="number"
+              value={idCategoria}
+              onChange={(e) => setIdCategoria(e.target.value)}
+              placeholder="Ingrese el ID"
+              min="1" 
+            />
+          </div>
+
+          <div className="input-group">
+            <label>Categoría:</label>
+            <input
+              type="text"
+              value={categoria}
+              onChange={(e) => setCategoria(e.target.value)}
+              placeholder="Ingrese la categoría"
+            />
+          </div>
+
+          {error && <p className="error">{error}</p>}
+
+          <div className="input-group">
+            <button onClick={handleAgregar}>
+              {editando ? "Actualizar" : "Ingresar"}
+            </button>
+          </div>
         </div>
 
-        <div className="input-group">
-          <label>Categoría:</label>
-          <input
-            type="text"
-            value={categoria}
-            onChange={(e) => setCategoria(e.target.value)}
-            placeholder="Ingrese la categoría"
-          />
-        </div>
-
-
-        {error && <p className="error">{error}</p>}
-
-        <div className="input-group">
-          <button onClick={handleAgregar}>
-            {editando ? "Actualizar" : "Ingresar"}
-          </button>
-        </div>
-      </div>
-
-      <table className="tabla-categorias">
-        <thead>
-          <tr>
-            <th>ID Categoría</th>
-            <th>Categoría</th>
-            <th>         </th>
-          </tr>
-        </thead>
-        <tbody>
-          {categorias.map((cat) => (
-            <tr key={cat.idCategoria}>
-              <td>{cat.idCategoria}</td>
-              <td>{cat.categoria}</td>
-              <td>
-                <button
-                  className="btn-editar"
-                  onClick={() => handleEditar(cat)}
-                >
-                  Editar
-                </button>
-                <button
-                  className="btn-eliminar"
-                  onClick={() => handleEliminar(cat.idCategoria)}
-                >
-                  Eliminar
-                </button>
-              </td>
+        <table className="tabla-categorias">
+          <thead>
+            <tr>
+              <th>ID Categoría</th>
+              <th>Categoría</th>
+              <th>Acciones</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {categorias.map((cat) => (
+              <tr key={cat.idCategoria}>
+                <td>{cat.idCategoria}</td>
+                <td>{cat.categoria}</td>
+                <td>
+                  <button
+                    className="btn-editar"
+                    onClick={() => handleEditar(cat)}
+                  >
+                    Editar
+                  </button>
+                  <button
+                    className="btn-eliminar"
+                    onClick={() => handleEliminar(cat.idCategoria)}
+                  >
+                    Eliminar
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
-export default Categorias;
 
+export default Categorias;
