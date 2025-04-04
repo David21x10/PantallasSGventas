@@ -128,6 +128,10 @@ const Categorias: React.FC = () => {
           </tbody>
         </table>
       </div>
+      {/* FOOTER */}
+      <footer className="categoria-footer">
+        <p>© 2025 Papelería La Esquina del Papel. Todos los derechos reservados.</p>
+      </footer>
     </div>
   );
 };
