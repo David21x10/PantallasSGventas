@@ -3,7 +3,7 @@
 import React from "react"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { FaEdit, FaTrash, FaArrowLeft } from "react-icons/fa"
+import { FaEdit, FaTrash } from "react-icons/fa"
 import "./Productos.css"
 
 // Datos de ejemplo para productos
@@ -124,13 +124,12 @@ const Productos: React.FC = () => {
 
   return (
     <div className="productos-container">
-      {/* HEADER */}
-      <header className="productos-header">
-        <h1>Productos</h1>
-        <button className="volver-menu-button" onClick={() => navigate("/")}>
-          <FaArrowLeft /> Volver al Menú
+      {/* Botón de regresar al menú */}
+      <div className="menu-button-container">
+        <button className="btn-back" onClick={() => navigate("/")}>
+          Regresar al Menú
         </button>
-      </header>
+      </div>
 
       {/* CONTENIDO PRINCIPAL */}
       <div className="productos-content">
