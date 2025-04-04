@@ -58,10 +58,12 @@ const Categorias: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="menu-categoria" >
+        <header className="menu-cate">
       <button className="btn-back" onClick={() => navigate("/")}>
         Regresar al Menú
       </button>
+      </header>
       
       <div className="categoria-container">
         <h2 className="titulo">Categorías</h2>
