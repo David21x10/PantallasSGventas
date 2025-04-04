@@ -1,15 +1,12 @@
 /* Contenedor principal */
 .venta-container {
-  display: flex;
-  flex-direction: column;
   max-width: 800px;
   margin: 0 auto;
-  margin-top: 85px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  min-height: 100vh; 
+  margin-top: 40px;
+  padding: 40px;
+  background-color: #f9f9f9; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 /* Título */
@@ -18,7 +15,7 @@
   font-size: 36px;
   margin-bottom: 30px;
   color: #023047;
-  font-weight: bold;
+  font-weight: bold; 
 }
 
 /* Formulario */
@@ -27,33 +24,41 @@
 }
 
 .input-group {
-  margin-bottom: 20px;
+  margin-bottom: 20px; 
+}
+
+.input-group label {
+  font-size: 16px;
+  margin-bottom: 8px;
+  display: block;
+  color: #023047;
+  font-weight: bold; 
 }
 
 .input-group input {
   width: 100%;
-  padding: 12px;
+  padding: 12px; 
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 8px; 
   font-size: 16px;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease; 
 }
 
 .input-group input:focus {
-  border-color: #219ebc;
-  outline: none;
+  border-color: #219ebc; 
+  outline: none; 
 }
 
 button {
-  padding: 12px 20px;
+  padding: 12px 20px; 
   background-color: #219ebc;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 8px; 
   cursor: pointer;
   font-size: 16px;
   width: 100%;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease; 
 }
 
 button:hover {
@@ -72,13 +77,13 @@ button:hover {
   padding: 14px;
   text-align: left;
   border: 1px solid #ddd;
-  font-size: 16px;
+  font-size: 16px; 
 }
 
 .tabla-ventas th {
   background-color: #f2f2f2;
   color: #023047;
-  font-weight: bold;
+  font-weight: bold; 
 }
 
 .tabla-ventas td {
@@ -87,22 +92,36 @@ button:hover {
 
 .tabla-ventas .acciones {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  align-items: flex-start;
+  flex-direction: column; 
+  gap: 15px; 
+  align-items: flex-start; 
+}
+
+.btn-editar,
+.btn-eliminar {
+  padding: 10px 15px; 
+  font-size: 16px; 
+  border: none;
+  border-radius: 6px; 
+  cursor: pointer;
+  width: 100%; 
+  text-align: center; 
+  transition: background-color 0.3s ease; 
+}
+
+.btn-editar {
+  background-color: #ffc107;
+  color: white;
+  margin-bottom: 10px; 
+}
+
+.btn-editar:hover {
+  background-color: #e0a800;
 }
 
 .btn-eliminar {
-  padding: 10px 15px;
-  font-size: 16px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  width: 100%;
-  text-align: center;
   background-color: #dc3545;
   color: white;
-  transition: background-color 0.3s ease;
 }
 
 .btn-eliminar:hover {
@@ -118,6 +137,31 @@ button:hover {
   font-weight: bold;
 }
 
+/* HEADER */
+header {
+  background-color: #023047;
+  color: white;
+  padding: 20px 10px;  /* Ajusta el padding para aumentar el grosor */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 80px;  /* Ajusta la altura del header */
+}
+
+header button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+header button:hover {
+  background-color: #0056b3;
+}
+
 /* FOOTER */
 .venta-footer {
   width: 100%;
@@ -126,7 +170,9 @@ button:hover {
   text-align: center;
   padding: 15px;
   font-size: 1.2rem;
-  margin-top: auto; 
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
 
 /* Responsive */
