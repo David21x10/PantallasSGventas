@@ -55,7 +55,7 @@ const Venta: React.FC = () => {
       {/* Header */}
       <header className="menu-header">
         <button className="btn-back" onClick={handleRegresarAlMenu}>
-          Regresar al menú
+          Regresar al Menú
         </button>
       </header>
 
