@@ -1,12 +1,37 @@
-/* Contenedor principal */
+/* Ajuste del HEADER más grueso */
+.menu-header {
+  background-color: #023047;
+  color: white;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+/* Estilo general de los botones */
+.btn-back, .btn-add-product {
+  background-color: #219ebc;  /* Color de fondo azul uniforme */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;  /* Añadimos transición para el hover */
+}
+
+/* Estilo cuando el botón se encuentra en hover */
+.btn-back:hover, .btn-add-product:hover {
+  background-color: #00408d;  /* Color más oscuro pero uniforme para ambos #00408d */
+}
+
+/* Contenedor de la venta con más espacio */
 .venta-container {
-  max-width: 800px;
-  margin: 0 auto;
-  margin-top: 40px;
+  max-width: 900px;
+  margin: 80px auto 50px; /* Aumentado el margen superior */
   padding: 40px;
-  background-color: #f9f9f9; 
-  border-radius: 8px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Título */
@@ -15,154 +40,42 @@
   font-size: 36px;
   margin-bottom: 30px;
   color: #023047;
-  font-weight: bold; 
-}
-
-/* Formulario */
-.formulario {
-  margin-bottom: 30px;
-}
-
-.input-group {
-  margin-bottom: 20px; 
-}
-
-.input-group label {
-  font-size: 16px;
-  margin-bottom: 8px;
-  display: block;
-  color: #023047;
-  font-weight: bold; 
-}
-
-.input-group input {
-  width: 100%;
-  padding: 12px; 
-  border: 1px solid #ccc;
-  border-radius: 8px; 
-  font-size: 16px;
-  transition: border-color 0.3s ease; 
-}
-
-.input-group input:focus {
-  border-color: #219ebc; 
-  outline: none; 
-}
-
-button {
-  padding: 12px 20px; 
-  background-color: #219ebc;
-  color: white;
-  border: none;
-  border-radius: 8px; 
-  cursor: pointer;
-  font-size: 16px;
-  width: 100%;
-  transition: background-color 0.3s ease; 
-}
-
-button:hover {
-  background-color: #023047;
-}
-
-/* Tabla de ventas */
-.tabla-ventas {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 30px;
-}
-
-.tabla-ventas th,
-.tabla-ventas td {
-  padding: 14px;
-  text-align: left;
-  border: 1px solid #ddd;
-  font-size: 16px; 
-}
-
-.tabla-ventas th {
-  background-color: #f2f2f2;
-  color: #023047;
-  font-weight: bold; 
-}
-
-.tabla-ventas td {
-  vertical-align: middle;
-}
-
-.tabla-ventas .acciones {
-  display: flex;
-  flex-direction: column; 
-  gap: 15px; 
-  align-items: flex-start; 
-}
-
-.btn-editar,
-.btn-eliminar {
-  padding: 10px 15px; 
-  font-size: 16px; 
-  border: none;
-  border-radius: 6px; 
-  cursor: pointer;
-  width: 100%; 
-  text-align: center; 
-  transition: background-color 0.3s ease; 
-}
-
-.btn-editar {
-  background-color: #ffc107;
-  color: white;
-  margin-bottom: 10px; 
-}
-
-.btn-editar:hover {
-  background-color: #e0a800;
-}
-
-.btn-eliminar {
-  background-color: #dc3545;
-  color: white;
-}
-
-.btn-eliminar:hover {
-  background-color: #c82333;
-}
-
-/* Total */
-.total {
-  font-size: 1.5rem;
-  text-align: right;
-  color: #023047;
-  margin-top: 20px;
   font-weight: bold;
 }
 
-/* HEADER */
-header {
+/* Contenedor de fecha */
+.input-fecha-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-fecha-container label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #023047;
+}
+
+/* Estilos de la tabla con bordes */
+.tabla-ventas {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.tabla-ventas th, .tabla-ventas td {
+  border: 2px solid #000; 
+  padding: 10px;
+  text-align: center;
+}
+
+.tabla-ventas th {
   background-color: #023047;
   color: white;
-  padding: 20px 10px;  /* Ajusta el padding para aumentar el grosor */
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 80px;  /* Ajusta la altura del header */
 }
 
-header button {
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin-left: 20px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-header button:hover {
-  background-color: #0056b3;
-}
-
-/* FOOTER */
+/* Footer fijo con fondo azul */
 .venta-footer {
   width: 100%;
   background-color: #023047;
@@ -173,17 +86,4 @@ header button:hover {
   position: fixed;
   bottom: 0;
   left: 0;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .input-group input {
-    padding: 10px;
-  }
-
-  .tabla-ventas th,
-  .tabla-ventas td {
-    padding: 8px 10px;
-    font-size: 0.9rem;
-  }
 }

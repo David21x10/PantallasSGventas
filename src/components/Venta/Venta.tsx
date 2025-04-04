@@ -21,7 +21,7 @@ const Venta: React.FC = () => {
   const [vendedor, setVendedor] = useState("");
   const [telefono, setTelefono] = useState("");
   const [email, setEmail] = useState("");
-  const [fecha, setFecha] = useState<string>(new Date().toLocaleDateString());
+  const [fecha, setFecha] = useState<string>(new Date().toISOString().split("T")[0]);
 
   const handleAgregar = () => {
     if (!nombre || cantidad === "" || precio === "") {
@@ -51,13 +51,15 @@ const Venta: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="venta-page">
+      {/* Header */}
       <header className="menu-header">
         <button className="btn-back" onClick={handleRegresarAlMenu}>
           Regresar al menú
         </button>
       </header>
 
+      {/* Contenedor principal más separado */}
       <div className="venta-container">
         <h2 className="titulo">Nueva Factura</h2>
 
@@ -70,7 +72,12 @@ const Venta: React.FC = () => {
             <input type="text" placeholder="Teléfono" value={telefono} onChange={(e) => setTelefono(e.target.value)} />
             <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
           </div>
-          <input type="date" value={fecha} onChange={(e) => setFecha(e.target.value)} className="input-fecha"/>
+
+          {/* Campo de fecha con etiqueta */}
+          <div className="input-fecha-container">
+            <label htmlFor="fecha">Fecha:</label>
+            <input id="fecha" type="date" value={fecha} onChange={(e) => setFecha(e.target.value)} className="input-fecha" />
+          </div>
 
           <div className="input-group">
             <input type="text" placeholder="Nombre del producto" value={nombre} onChange={(e) => setNombre(e.target.value)} />
@@ -81,15 +88,7 @@ const Venta: React.FC = () => {
           <button onClick={handleAgregar}>Agregar Producto</button>
         </div>
 
-        <div className="factura-info">
-          <h3>Detalles de la Factura:</h3>
-          <p><strong>Cliente:</strong> {cliente}</p>
-          <p><strong>Vendedor:</strong> {vendedor}</p>
-          <p><strong>Teléfono:</strong> {telefono}</p>
-          <p><strong>Email:</strong> {email}</p>
-          <p><strong>Fecha:</strong> {fecha}</p>
-        </div>
-
+        {/* Tabla con cuadros restaurados */}
         <table className="tabla-ventas">
           <thead>
             <tr>
@@ -118,6 +117,7 @@ const Venta: React.FC = () => {
         <h3 className="total">Total: L {calcularTotal().toFixed(2)}</h3>
       </div>
 
+      {/* Footer */}
       <footer className="venta-footer">
         <p>© 2025 Papelería La Esquina del Papel. Todos los derechos reservados.</p>
       </footer>
