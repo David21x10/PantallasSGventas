@@ -11,6 +11,8 @@ interface Producto {
 
 const Venta: React.FC = () => {
   const navigate = useNavigate();
+const handleRegresarAlMenu = () => 
+  navigate("/Menu");
   const [productos, setProductos] = useState<Producto[]>([]);
   const [nombre, setNombre] = useState("");
   const [cantidad, setCantidad] = useState<number | "">("");
@@ -49,10 +51,17 @@ const Venta: React.FC = () => {
   };
 
   return (
-      <div>
-      <button className="btn-back" onClick={() => navigate("/")}>Regresar al Menú</button>
+    <div>
       <div className="venta-container">
       <h2 className="titulo">Nueva Factura</h2>
+
+       {/* HEADER */}
+       <header className="menu-header">
+        <h1>Ventas</h1>
+        <button className="logout-button" onClick={handleRegresarAlMenu}>
+    Regresar al menú
+  </button>
+      </header>
 
       <div className="formulario">
         <input type="text" placeholder="Nombre del Cliente" value={cliente} onChange={(e) => setCliente(e.target.value)} />
@@ -103,6 +112,12 @@ const Venta: React.FC = () => {
 
       <h3 className="total">Total: L {calcularTotal().toFixed(2)}</h3>
     </div>
+    
+    {/* FOOTER */}
+    <footer className="venta-footer">
+        <p>© 2025 Papelería La Esquina del Papel. Todos los derechos reservados.</p>
+      </footer>
+      
     </div>
   );
 };
