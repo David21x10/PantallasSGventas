@@ -18,20 +18,11 @@ interface IErrores {
   telefono: string | null
 }
 
-const ejemploCliente: ICliente[] = [
-  {
-    id: '1',
-    nombre: 'Test',
-    email: 'test@test.com',
-    telefono: "12345678"
-  }
-]
-
 const Cliente: React.FC = () => {
   const navigate = useNavigate();
   const [editando, setEditando] = useState(false)
 
-  const [clientes, setClientes] = useState<ICliente[]>(ejemploCliente)
+  const [clientes, setClientes] = useState<ICliente[]>([])
   const [cliente, setCliente] = useState<ICliente>({
     id: "",
     nombre: "",
@@ -105,7 +96,7 @@ const Cliente: React.FC = () => {
 
   return (
     <div className="cliente-container">
-      <div className="menu-button-container">
+      <div className="cliente-menu-button-container">
         <button className="btn-back" onClick={() => navigate("/")}>Regresar al Menú</button>
       </div>
 
@@ -167,8 +158,8 @@ const Cliente: React.FC = () => {
           </div>
 
           <div className="input-group">
-            <button onClick={handleAgregar}>
-              {editando ? "Actualizar" : "Ingresar"}
+            <button className="btn-agregar" onClick={handleAgregar}>
+              {editando ? "Actualizar" : "Agregar cliente"}
             </button>
             {
               editando && <button onClick={handleCancelarEdicion} className="btn-cancelar">
@@ -214,8 +205,7 @@ const Cliente: React.FC = () => {
           </table>
         </div>
       </div>
-
-
+      
       {/* FOOTER */}
       <footer className="cliente-footer">
         <p>© 2025 Papelería La Esquina del Papel. Todos los derechos reservados.</p>

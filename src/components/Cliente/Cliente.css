@@ -18,7 +18,6 @@
 .cliente-content {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     width: 100%;
     background-color: white;
     color: #219ebc;
@@ -36,12 +35,6 @@
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-}
-
-@media (min-width: 1280px) {
-    .cliente-formulario {
-        min-width: 60%;
-    }
 }
 
 .titulo {
@@ -80,22 +73,6 @@
 .input-group input:focus {
     border-color: #219ebc;
     outline: none;
-}
-
-button {
-    padding: 12px 20px;
-    background-color: #219ebc;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100%;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #023047;
 }
 
 .tabla-container {
@@ -185,16 +162,12 @@ button:hover {
     background-color: #b7b6b3;
 }
 
-/* HEADER */
-.cliente-header {
-    width: 100%;
-    background-color: #023047;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 20px;
-    position: relative;
+.btn-agregar {
+    background-color: #17a2b8;
+}
+
+.btn-agregar:hover {
+    background-color: #138496;
 }
 
 /* FOOTER */
@@ -217,11 +190,12 @@ button:hover {
 }
 
 /* Contenedor del botón de menú */
-.menu-button-container {
-    width: 100%;
-    background-color: #17a2b8;
-    text-align: center;
-    padding: 10px 0;
+.cliente-menu-button-container {
+    height: 80px;
+    background-color: #023047;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Estilo del botón de regresar */
@@ -233,4 +207,36 @@ button:hover {
     font-size: 14px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+
+.btn-back:hover {
+    text-decoration: underline;
+  }
+  
+
+@media (min-width: 1280px) {
+    .cliente-formulario {
+        min-width: 60%;
+    }
+
+    .tabla-container {
+        overflow-x: auto;
+    }
+
+    .cliente-footer {
+        width: 100%;
+        background-color: #023047;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        font-size: 1.2rem;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+@media (min-width: 720px) {
+    .tabla-container {
+        overflow-x: auto;
+    }
 }
