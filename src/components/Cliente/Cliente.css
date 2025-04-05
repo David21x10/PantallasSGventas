@@ -161,3 +161,7 @@ button:hover {
 .input-error {
     color: #dc3545;
 }
+
+.volver-menu-button{
+    display: inline-block;
+}

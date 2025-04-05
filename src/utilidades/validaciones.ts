@@ -7,7 +7,7 @@ export const validarIdNumerico = (idNumero: number) => {
 
 export const validarNombre = (nombre: string) => {
     if (!nombre) return "El nombre es requerido."
-    const regex = new RegExp("^[A-Za-z]+$")
+    const regex = new RegExp(/^[a-zA-Z\s]*$/)
     if (!regex.test(nombre)) return "El nombre solo puede contener letras."
 
     return null

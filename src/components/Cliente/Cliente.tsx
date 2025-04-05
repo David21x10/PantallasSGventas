@@ -99,14 +99,11 @@ const Cliente: React.FC = () => {
   return (
     <div>
       <header className="cliente-header">
-        <h1>Clientes</h1>
-        <button className="volver-menu-button" onClick={() => navigate("/")}>
+        <div className="volver-menu-button" onClick={() => navigate("/")}>
           <FaArrowLeft /> Volver al Menú
-        </button>
+        </div>
+        <h1>Clientes</h1>
       </header>
-      <button className="btn-back" onClick={() => navigate("/")}>
-        Regresar al Menú
-      </button>
       <div className="cliente-container">
         <div className="input-group">
           <label>ID Cliente:</label>
