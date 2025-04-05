@@ -1,15 +1,40 @@
-/* Contenedor principal */
+
+.menu-header {
+  background-color: #023047;
+  color: white;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+
+.btn-back, .btn-add-product {
+  background-color: #219ebc;  
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;  
+}
+
+
+.btn-back:hover, .btn-add-product:hover {
+  background-color: #00408d;  
+  }
+
+
 .venta-container {
-  max-width: 800px;
-  margin: 0 auto;
-  margin-top: 85px;
-  padding: 20px;
+  max-width: 900px;
+  margin: 80px auto 50px; 
+  padding: 40px;
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Título */
+
 .titulo {
   text-align: center;
   font-size: 36px;
@@ -18,99 +43,47 @@
   font-weight: bold;
 }
 
-/* Formulario */
-.formulario {
-  margin-bottom: 30px;
-}
 
-.input-group {
+.input-fecha-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
-.input-group input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: border-color 0.3s ease;
+.input-fecha-container label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #023047;
 }
 
-.input-group input:focus {
-  border-color: #219ebc;
-  outline: none;
-}
 
-button {
-  padding: 12px 20px;
-  background-color: #219ebc;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  width: 100%;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #023047;
-}
-
-/* Tabla de ventas */
 .tabla-ventas {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
-.tabla-ventas th,
-.tabla-ventas td {
-  padding: 14px;
-  text-align: left;
-  border: 1px solid #ddd;
-  font-size: 16px;
+.tabla-ventas th, .tabla-ventas td {
+  border: 2px solid #000; 
+  padding: 10px;
+  text-align: center;
 }
 
 .tabla-ventas th {
-  background-color: #f2f2f2;
-  color: #023047;
-  font-weight: bold;
-}
-
-.tabla-ventas td {
-  vertical-align: middle;
-}
-
-.tabla-ventas .acciones {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  align-items: flex-start;
-}
-
-.btn-eliminar {
-  padding: 10px 15px;
-  font-size: 16px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  width: 100%;
-  text-align: center;
-  background-color: #dc3545;
+  background-color: #023047;
   color: white;
-  transition: background-color 0.3s ease;
 }
 
-.btn-eliminar:hover {
-  background-color: #c82333;
-}
 
-/* Total */
-.total {
-  font-size: 1.5rem;
-  text-align: right;
-  color: #023047;
-  margin-top: 20px;
-  font-weight: bold;
+.venta-footer {
+  width: 100%;
+  background-color: #023047;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 1.2rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
