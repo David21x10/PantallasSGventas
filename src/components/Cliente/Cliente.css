@@ -1,11 +1,47 @@
 .cliente-container {
-    max-width: 800px;
-    margin: 0 auto;
-    margin-top: 85px;
-    padding: 20px;
-    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    background-color: white;
+    color: #219ebc;
+    position: relative;
+}
+
+.cliente-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #023047;
+}
+
+.cliente-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    background-color: white;
+    color: #219ebc;
+    position: relative;
+    padding: 30px 20px;
+}
+
+.cliente-formulario {
+    background-color: #f8f9fa;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+@media (min-width: 1280px) {
+    .cliente-formulario {
+        min-width: 60%;
+    }
 }
 
 .titulo {
@@ -62,6 +98,10 @@ button:hover {
     background-color: #023047;
 }
 
+.tabla-container {
+    overflow-x: scroll;
+}
+
 .tabla-cliente {
     width: 100%;
     border-collapse: collapse;
@@ -95,34 +135,44 @@ button:hover {
 
 .btn-editar,
 .btn-eliminar {
-    padding: 10px 15px;
-    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
     border: none;
-    border-radius: 6px;
     cursor: pointer;
+    font-size: 1rem;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background 0.2s;
+    padding: 10px 0px;
+}
+
+.acciones-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    text-align: center;
-    transition: background-color 0.3s ease;
+    height: 100%;
 }
 
 .btn-editar {
-    background-color: #ffc107;
-    color: white;
-    margin-bottom: 10px;
+    color: #17a2b8;
+    margin-top: 10px;
 }
 
 .btn-editar:hover {
-    background-color: #e0a800;
+    background-color: rgba(23, 162, 184, 0.1);
 }
 
 .btn-eliminar {
-    background-color: #dc3545;
-    color: white;
+    color: #d9534f;
 }
 
 .btn-eliminar:hover {
-    background-color: #c82333;
+    background-color: rgba(217, 83, 79, 0.1);
 }
+
 
 .btn-cancelar {
     background-color: #cac9c5;
@@ -162,6 +212,25 @@ button:hover {
     color: #dc3545;
 }
 
-.volver-menu-button{
+.volver-menu-button {
     display: inline-block;
+}
+
+/* Contenedor del botón de menú */
+.menu-button-container {
+    width: 100%;
+    background-color: #17a2b8;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Estilo del botón de regresar */
+.btn-back {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
